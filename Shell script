@@ -1,0 +1,16 @@
+mkdir amfiindia_data
+cd amfiindia_data
+nano extract_amfi_data.sh
+
+#define url
+url="http://www.amfiindia.com/spages/NAVAll.txt
+
+#using curl to fetch data from the url and save it to temporary file.
+temp_file="amfi_data.txt"
+curl -s "$url" -o "$temp_file"
+
+# extracting the scheme name and asset value
+awk -F ';' 'NR>1 {print $3 "\t" $6}' "$temp_file" > "$output_file"
+
+#removing temporary file.
+rm "$temp_file"
