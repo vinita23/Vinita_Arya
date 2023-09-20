@@ -11,6 +11,15 @@ select ncbi_id,species from taxonomy where species = 'Panthera tigris sumatrae';
 
 select ncbi_id,description,max(length) from rfamseq group by description limit 1;
 
+## Find all the columns that can be used to connect the tables in the given database.
+1. rfam_acc
+2. clan_acc
+3. ncbi_id
+4. upid
+5. motif_acc
+6. pdb_id
+7. species
+ 
 ##We want to paginate a list of the family names and their longest DNA sequence lengths (in descending order of length) where only families that have DNA sequence lengths greater than 1,000,000 are included. Give a query that will return the 9th page when there are 15 results per page. (hint: we need the family accession ID, family name and the maximum length in the results)
 
 select rfamseq_acc, accession,mol_type, length, description from rfamseq where length > 1000000
