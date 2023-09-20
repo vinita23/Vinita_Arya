@@ -30,4 +30,8 @@ else:
 
 
 
+#### Test cases which can be performed are-
+1. Valid address and corresponding pincode
+2. Null address
+3. Invalid address
 
